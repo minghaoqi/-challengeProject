@@ -22,9 +22,9 @@ public class customerBean implements Serializable {
 	}
 	
 	public static void main(String[] args) {
-		customerBean c = new customerBean();
-		c.setCustomerName("111");
-		System.out.println(c.getCustomerName());
+	customerBean c = new customerBean();
+	c.setCustomerName("111");
+	  System.out.println(c.getCustomerName());
 	}
 	
 }
