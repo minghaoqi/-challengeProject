@@ -2,11 +2,8 @@ package com.first.entity;
 
 import java.io.Serializable;
 
-import sun.util.resources.CurrencyNames_is_IS;
 
 public class customerBean implements Serializable {
-
-	
 	/**
 	 * 
 	 */
@@ -22,9 +19,8 @@ public class customerBean implements Serializable {
 	}
 	
 	public static void main(String[] args) {
-	customerBean c = new customerBean();
-	c.setCustomerName("111");
+	  customerBean c = new customerBean();
+	  c.setCustomerName("111");
 	  System.out.println(c.getCustomerName());
-	}
-	
+	}	
 }
