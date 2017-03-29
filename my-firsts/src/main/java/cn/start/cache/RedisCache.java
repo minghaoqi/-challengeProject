@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.concurrent.Callable;
+
 import org.springframework.cache.Cache;
 import org.springframework.cache.support.SimpleValueWrapper;
 import org.springframework.dao.DataAccessException;
@@ -16,9 +17,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 * Created by haoz1w0w@126.com on 2017-03-28 10:26:13.
 */
 public class RedisCache implements Cache{
-
 private RedisTemplate<String, Object> redisTemplate;
 private String name;
+private String tomcae;
 public RedisTemplate<String, Object> getRedisTemplate() {
 return redisTemplate;
 }
