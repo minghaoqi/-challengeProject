@@ -19,7 +19,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class RedisCache implements Cache{
 private RedisTemplate<String, Object> redisTemplate;
 private String name;
-private String tomcae;
 public RedisTemplate<String, Object> getRedisTemplate() {
 return redisTemplate;
 }
