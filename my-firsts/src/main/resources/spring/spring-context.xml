@@ -26,6 +26,18 @@
                     <entry key="xml_escape" value-ref="fmXmlEscape"/>
                 </map>
             </property>
+            <property name="freemarkerSettings">
+                <props>
+                    <prop key="template_update_delay">0</prop>
+                    <prop key="default_encoding">UTF-8</prop>
+                    <prop key="locale">zh_CN</prop>
+                    <prop key="number_format">0.###</prop>
+                    <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                    <prop key="auto_import">common.html as web</prop>
+                    <prop key="classic_compatible">true</prop>
+                </props>
+            </property>
+
         </bean>
         <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
         <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">

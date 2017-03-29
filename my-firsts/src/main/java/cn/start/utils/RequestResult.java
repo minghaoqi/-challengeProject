@@ -1,5 +1,7 @@
 package cn.start.utils;
 
+import org.apache.shiro.authc.UsernamePasswordToken;
+
 import java.util.HashMap;
 
 /**
@@ -18,6 +20,7 @@ public class RequestResult extends HashMap<String,Object> {
     public RequestResult buildResult(ResultInfo resultInfo){
         this.put("code",resultInfo.getCode());
         this.put("msg",resultInfo.getMsg());
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken();
         return this;
     }
 

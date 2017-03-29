@@ -2,6 +2,7 @@ package cn.start.web;
 
 import cn.start.dao.BookDAO;
 import cn.start.po.Book;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ResponseBody;
 import cn.start.service.CacheService;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -29,7 +32,7 @@ BookDAO bookDAO;
 * @return
 */
 @RequestMapping("/database")
-public String testDatabase(Model model) {
+public String testDatabase(Model model, HttpServletRequest request) {
 StringBuilder builder = new StringBuilder();
 List<Book> list = bookDAO.getAllBooks();
     for (Book book :
