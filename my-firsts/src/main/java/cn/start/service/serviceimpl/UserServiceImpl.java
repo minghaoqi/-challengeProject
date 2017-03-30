@@ -3,6 +3,10 @@ package cn.start.service.serviceimpl;
 import cn.start.dao.UserDao;
 import cn.start.po.User;
 import cn.start.service.UserService;
+
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +19,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
+
     @Override
-    public Boolean checkLogin(String username, String password) {
-        User user = userDao.checkLogin(username,password);
-        return user != null;
+    public User doLogin(String loginKey,String loginPassword) {
+        UsernamePasswordToken token = new UsernamePasswordToken(loginKey,loginPassword);
+        Subject subject = SecurityUtils.getSubject();
+        subject.login(token);
+
+        return null;
     }
 }

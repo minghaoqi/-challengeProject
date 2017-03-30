@@ -68,4 +68,6 @@
             </list>
         </property>
     </bean>
+
+    <bean id="myRealm" class="cn.start.utils.shiro.MyRealm"></bean>
 </beans>

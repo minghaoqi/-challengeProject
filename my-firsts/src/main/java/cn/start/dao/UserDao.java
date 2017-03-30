@@ -1,6 +1,7 @@
 package cn.start.dao;
 
 import cn.start.po.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
 public interface UserDao {
 
     User checkLogin(String user, String password);
+
+    User doLogin(@Param("loginKey") String loginkey);
 }

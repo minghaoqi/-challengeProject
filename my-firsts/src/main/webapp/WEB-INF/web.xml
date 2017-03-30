@@ -22,7 +22,7 @@
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext-*.xml</param-value>
+        <param-value>classpath:spring/spring-context.xml,classpath:spring/applicationContext-*.xml</param-value>
     </context-param>
     <context-param>
         <param-name>spring.liveBeansView.mbeanDomain</param-name>
@@ -75,42 +75,42 @@
         <!--2、拦截/，例如：/user/add,可以实现现在很流行的REST风格。很多互联网类型的应用很喜欢这种风格的URL。弊端：会导致静态文件（jpg,js,css）被拦截后不能正常显示。 -->
         <url-pattern>*.do</url-pattern> <!--会拦截URL中带“/”的请求。-->
     </servlet-mapping>
-        <!--druid 监控 -->
-        <servlet>
-            <!-- sql 栏显示 -->
-            <servlet-name>DruidStatView</servlet-name>
-            <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
-            <init-param>
-                <!-- 允许清空统计数据 -->
-                <param-name>resetEnable</param-name>
-                <param-value>true</param-value>
-            </init-param>
-            <init-param>
-                <!-- 用户名 -->
-                <param-name>loginUsername</param-name>
-                <param-value>druid</param-value>
-            </init-param>
-            <init-param>
-                <!-- 密码 -->
-                <param-name>loginPassword</param-name>
-                <param-value>druid</param-value>
-            </init-param>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>DruidStatView</servlet-name>
-            <url-pattern>/druid/*</url-pattern>
-        </servlet-mapping>
+    <!--druid 监控 -->
+    <servlet>
+        <!-- sql 栏显示 -->
+        <servlet-name>DruidStatView</servlet-name>
+        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+        <init-param>
+            <!-- 允许清空统计数据 -->
+            <param-name>resetEnable</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <!-- 用户名 -->
+            <param-name>loginUsername</param-name>
+            <param-value>druid</param-value>
+        </init-param>
+        <init-param>
+            <!-- 密码 -->
+            <param-name>loginPassword</param-name>
+            <param-value>druid</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DruidStatView</servlet-name>
+        <url-pattern>/druid/*</url-pattern>
+    </servlet-mapping>
     <!--日志环境配置-->
     <!--公用环境配置:session-config,error_page,404,500-->
 
-        <!-- 解决velocity，freemaker 欢饮页面乱码问题-->
+    <!-- 解决velocity，freemaker 欢饮页面乱码问题-->
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.html</url-pattern>
             <page-encoding>UTF-8</page-encoding>
         </jsp-property-group>
     </jsp-config>
-    
+
     <!-- 配置shiro -->
     <filter>
         <filter-name>shiroFilter</filter-name>
