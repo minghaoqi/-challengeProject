@@ -6,5 +6,11 @@
 	<properties>
 		<property name="dialect" value="mysql" />
 	</properties>
+	       <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="LOG4J" />
+    </settings>
+    
+	
 	<!--分页拦截器-->
 </configuration>

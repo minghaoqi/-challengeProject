@@ -31,6 +31,7 @@ public class IndexController {
     @ResponseBody
     public RequestResult checkLogin(String username,String password){
         try {
+        	userService.checkLogin("qwe", "asdas");
             UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username,password);
             usernamePasswordToken.isRememberMe();
             Subject subject = SecurityUtils.getSubject();
