@@ -116,15 +116,13 @@
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
         <init-param>
-            <!-- 配置为true是由spring来管理 可以调用后续容器里的bean
-                 http://blog.csdn.net/u013378306/article/details/50801001
-             -->
+
             <param-name>targetFilterLifecycle</param-name>
             <param-value>true</param-value>
         </init-param>
     </filter>
     <filter-mapping>
         <filter-name>shiroFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.htm</url-pattern>
     </filter-mapping>
 </web-app>

@@ -32,15 +32,14 @@
     </bean>
 
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-        <property name="loginUrl" value="?"/>
+        <property name="loginUrl" value="/toLogin"/>
         <property name="securityManager" ref="securityManager"/>
         <!-- 用户未授权跳转的url -->
-        <property name="unauthorizedUrl" value="/"/>
+        <property name="unauthorizedUrl" value="/cxd"/>
         <!-- http://www.cppblog.com/guojingjia2006/archive/2014/05/14/206956.html -->
         <property name="filterChainDefinitions">
             <value>
-                <!-- 留个坑 这好像是配置 哪个url 对于哪个路径的  支持正则表达式
-                一般配置公共的 比如静态资源 不用登录  可以直接访问之类的 -->
+               /static/* = anon
 
             </value>
         </property>
