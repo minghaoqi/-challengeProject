@@ -10,6 +10,7 @@
     <!--统一配置jar包版本-->
     <properties>
         <springmvc-version>4.3.0.RELEASE</springmvc-version>
+        <jackson.version>2.5.4</jackson.version>
     </properties>
     <!--项目所需jar包-->
     <dependencies>
@@ -196,6 +197,18 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-all</artifactId>
             <version>1.2.3</version>
+        </dependency>
+
+        <!-- post返回解析 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
     </dependencies>

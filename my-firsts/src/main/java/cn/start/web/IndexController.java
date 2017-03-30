@@ -3,8 +3,13 @@ package cn.start.web;
 import cn.start.service.UserService;
 import cn.start.utils.RequestResult;
 import cn.start.utils.ResultInfo;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.authz.annotation.RequiresUser;
+import org.apache.shiro.subject.Subject;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,17 +27,26 @@ public class IndexController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "checkLogin",method = RequestMethod.POST)
+    @RequestMapping(value = "doLogin")
     @ResponseBody
     public RequestResult checkLogin(String username,String password){
-        Boolean check = userService.checkLogin(username,password);
-        RequestResult requestResult = RequestResult.getinstance();
-        if(check)
-            requestResult.buildResult(ResultInfo.SUCCESS);
-        else
-            requestResult.buildResult(ResultInfo.USER_PWD_ERROR);
-
-        return requestResult;
+        try {
+            UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username,password);
+            usernamePasswordToken.isRememberMe();
+            Subject subject = SecurityUtils.getSubject();
+            subject.login(usernamePasswordToken);
+            if(subject.isAuthenticated()){
+                System.out.print("---------------haole-----------");
+            }else{
+                System.out.print("---------------2222222-----------");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        RequestResult result = RequestResult.getinstance();
+        result.buildResult(ResultInfo.SUCCESS);
+        result.buildData(new Integer[]{1,2,1});
+        return result;
     }
 
 
