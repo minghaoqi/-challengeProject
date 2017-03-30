@@ -7,7 +7,7 @@
         select * from user where username = ? and password = ? ;
     </select>
 
-    <select id="checkUserName" resultType="cn.start.po.User">
+    <select id="doLogin" resultType="cn.start.po.User">
         select * from user where (
         username = #{loginKey} or telphone = #{loginKey}
         )

@@ -14,7 +14,7 @@ public class User {
 
     private String password;//用户密码
 
-    private String phone; //用户手机号
+    private String telphone; //用户手机号
 
     public Long getId() {
         return id;
@@ -46,5 +46,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getTelphone() {
+        return telphone;
+    }
+
+    public void setTelphone(String telphone) {
+        this.telphone = telphone;
     }
 }
