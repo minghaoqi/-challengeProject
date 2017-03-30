@@ -4,8 +4,7 @@
          version="3.0">
     <display-name>my-firsts 3.0 Web Application</display-name>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>manage/toLogin.do</welcome-file>
     </welcome-file-list>
     <!--siteMesh 控制器 -->
     <filter>
