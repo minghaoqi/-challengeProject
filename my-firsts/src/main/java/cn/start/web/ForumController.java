@@ -12,7 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ForumController {
 	@RequestMapping(value = "toForum")
 	public ModelAndView toForum(String name) {
-
+    
+		
+		
 		return new ModelAndView("/forum/index");
 	}
 
