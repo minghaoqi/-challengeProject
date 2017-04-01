@@ -26,9 +26,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User doLogin(String loginKey,String loginPassword) {
             UsernamePasswordToken token = new UsernamePasswordToken(loginKey,loginPassword);
-            token.setRememberMe(true);
+            //token.setRememberMe(true);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
         return null;
     }
+
+
 }

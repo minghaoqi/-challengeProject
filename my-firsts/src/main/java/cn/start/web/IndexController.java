@@ -4,9 +4,13 @@ import cn.start.service.UserService;
 import cn.start.utils.MyModel;
 import cn.start.utils.RequestResult;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.portlet.ModelAndView;
 
@@ -15,26 +19,35 @@ import org.springframework.web.portlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/manage")
-public class IndexController extends BaseController {
+public class IndexController{
 
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "doLogin")
-    @ResponseBody
-    public MyModel checkLogin(String username,String password){
-        MyModel model = MyModel.getinstance();
-        model.buildView("/manage/toIndex.do").buildData("msg",null);
+
+    @RequestMapping(value = "checkLogin",method = RequestMethod.POST)
+    public String checkLogin(String username,String password){
+
         userService.doLogin(username,password);
-        return model;
+        return "/manage/index";
     }
+
 
 
     @RequestMapping(value = "toLogin")
     public String toLogin(){
-
+        if(SecurityUtils.getSubject().getSession() != null){
+            SecurityUtils.getSubject().logout();
+        }
         return "/login";
+    }
+
+    @RequiresRoles("13213")
+    @RequestMapping(value = "toIndex")
+    public String toIndex(){
+
+        return "/manage/index";
     }
 
 

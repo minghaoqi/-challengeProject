@@ -20,7 +20,7 @@ public class BaseController {
 
         String msg = "";
         ModelAndView model = new ModelAndView();
-        model.setView("/manage/login");
+        model.setView("/login");
         if(e instanceof UnknownAccountException){
             System.out.print("用户名没找到");
         }else if(e instanceof IncorrectCredentialsException){
@@ -28,6 +28,7 @@ public class BaseController {
         }else{
             msg = "系统错误";
         }
+        model.addObject("msg",msg);
         return model;
     }
 }

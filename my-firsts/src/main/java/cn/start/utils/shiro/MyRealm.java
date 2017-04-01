@@ -55,7 +55,6 @@ public class MyRealm extends AuthorizingRealm{
 
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(loginKey,user.getPassword(),getName());
 
-
         return simpleAuthenticationInfo;
     }
 
@@ -83,7 +82,7 @@ public class MyRealm extends AuthorizingRealm{
         }
         Set<String> roleSet = new HashSet<String>();
         for(Role r : roles){
-            juriSet.add(r.getRoleName());
+            roleSet.add(r.getRoleName());
         }
 
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
