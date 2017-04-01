@@ -37,9 +37,5 @@ public class IndexController extends BaseController {
         return "/login";
     }
 
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> b1e6f0759853ef7835757e8ecb5104eee5de4ca8
 }

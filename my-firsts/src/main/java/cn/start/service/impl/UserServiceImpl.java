@@ -1,4 +1,4 @@
-package cn.start.service.serviceimpl;
+package cn.start.service.impl;
 
 import cn.start.dao.UserDao;
 import cn.start.po.User;
