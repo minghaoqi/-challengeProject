@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.start.dao.PostMaiDao">
-<select id="selectPostMainByParam" parameterType="java.util.map" resultType="cn.start.po.PostMain">
+<select id="selectPostMainByParam" parameterType="java.util.Map" resultType="cn.start.po.PostMain">
   select * from post_main where is_del ='1'
   <if test="postId !=null and postId!=''">
  and post_id=#{postId}

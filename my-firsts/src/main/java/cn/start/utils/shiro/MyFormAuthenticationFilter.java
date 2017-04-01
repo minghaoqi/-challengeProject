@@ -47,7 +47,7 @@ public class MyFormAuthenticationFilter extends FormAuthenticationFilter impleme
                 }else{
                  return false;
                 }
-            } catch (AuthenticationException var5) {
+            } catch (Exception var5) {
                 this.saveRequestAndRedirectToLogin(request, response);
                 return false;
             }

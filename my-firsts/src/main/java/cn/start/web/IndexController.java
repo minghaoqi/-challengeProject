@@ -19,7 +19,7 @@ import org.springframework.web.portlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/manage")
-public class IndexController{
+public class IndexController extends BaseController{
 
 
     @Autowired
@@ -47,6 +47,12 @@ public class IndexController{
     @RequestMapping(value = "toIndex")
     public String toIndex(){
 
+        System.out.print("");
+        try {
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return "/manage/index";
     }
 
