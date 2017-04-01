@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="cn.start.dao.RoleDao">
+
+    <select id="listRoleByUser" resultType="cn.start.po.Role" parameterType="java.lang.Long">
+        select r.* from user_role ur
+        left join role r on ur.roleid = r.id
+        where ur.userid = (select id from user where id = #{userid} );
+    </select>
+</mapper>

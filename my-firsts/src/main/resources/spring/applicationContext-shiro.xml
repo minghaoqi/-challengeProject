@@ -21,7 +21,7 @@
     </bean>
 
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-        <property name="loginUrl" value="/toLogin"/>
+        <property name="loginUrl" value="manage/toLogin.do"/>
         <property name="securityManager" ref="securityManager"/>
         <!-- 用户未授权跳转的url -->
         <property name="unauthorizedUrl" value="/cxd"/>
@@ -29,7 +29,7 @@
         <property name="filterChainDefinitions">
             <value>
                /static/* = anon
-
+               /logout.do = logout
             </value>
         </property>
     </bean>
