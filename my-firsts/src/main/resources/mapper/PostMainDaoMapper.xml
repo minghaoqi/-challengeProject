@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.start.dao.PostMaiDao">
-<select id="selectPostMainByParam" parameterType="java.util.Map" resultType="cn.start.po.PostMain">
-  select * from post_main where is_del ='1'
-  <if test="postId !=null and postId!=''">
- and post_id=#{postId}
-</if>  
-  <if test="postTitle !=null and postTitle''">
-  and post_title=#{postTitle}
-</if>  
-  <if test="postContent !=null and postContent''">
-   and post_content=#{postContent}
-</if>  
-  <if test="postTopicId !=null and postTopicId!=''">
-  and post__topic_id=#{postTopicId}
-</if>  
-<if test="userId !=null and userId!=''">
-and user_id=#{userId}
-</if>  
-<if test="postCreateTime!=null and userId!=''">
-and post_create_time =#{postCreateTime}
-</if>
+<mapper namespace="cn.start.dao.PostMainDao">
+	<resultMap type="cn.start.vo.PostMainVo" id="postMap">
+		<id property="postId" column="post_id"></id>
+		<result property="postTitle" column="post_title"></result>
+		<result property="postContent" column="post_content"></result>
+		<result property="postTopicId" column="post__topic_id"></result>
+		<result property="userId" column="user_id"></result>
+		<result property="postCreateTime" column="post_create_time"></result>
+		<result property="topicName" column="topic_name"></result>
+	</resultMap>
 
-</select>
+	<select id="selectPostMainByParam" parameterType="java.util.Map"
+		resultMap="postMap">
+		SELECT
+		pm.`is_del`,pm.`post_comment_count`,pm.`post_content`,pm.`post_create_time`,pm.`post_id`
+		,pm.`post_title`,pm.`post__topic_id`
+		,pm.`user_id`,t.`topic_name`
+		FROM post_main pm LEFT JOIN topic t ON pm.post__topic_id=t.topic_id
+		WHERE pm.is_del=1
+		<if test="postId !=null and postId!=''">
+			and pm.post_id=#{postId}
+		</if>
+		<if test="postTitle !=null and postTitle!=''">
+			and pm.post_title=#{postTitle}
+		</if>
+		<if test="postContent !=null and postContent!=''">
+			and pm.post_content=#{postContent}
+		</if>
+		<if test="postTopicId !=null and postTopicId!=''">
+			and pm.post__topic_id=#{postTopicId}
+		</if>
+		<if test="userId !=null and userId!=''">
+			and pm.user_id=#{userId}
+		</if>
+		<if test="postCreateTime!=null and userId!=''">
+			and post_create_time =#{postCreateTime}
+		</if>
+		order by pm.post_create_time desc
+		limit 0,6
+
+	</select>
 
 </mapper>

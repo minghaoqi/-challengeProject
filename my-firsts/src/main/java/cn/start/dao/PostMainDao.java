@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import cn.start.po.PostMain;
+import cn.start.vo.PostMainVo;
 
 public interface PostMainDao {
 
-	List<PostMain> selectPostMainByParam(Map<String, Object> map);
+	List<PostMainVo> selectPostMainByParam(Map<String, Object> map);
 
 	int addPost(PostMain post);
 
