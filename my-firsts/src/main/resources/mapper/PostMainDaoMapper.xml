@@ -10,6 +10,13 @@
 		<result property="postCreateTime" column="post_create_time"></result>
 		<result property="topicName" column="topic_name"></result>
 	</resultMap>
+	<resultMap type="cn.start.po.Topic" id="topicMap">
+	<id property="topicId" column="topic_id"></id>
+	<result property="topicName" column="topic_name"></result>
+		<result property="createTime" column="create_time"></result>
+		<result property="isDel" column="is_del"></result>
+	   <result property="userId" column="user_id"></result>
+	</resultMap>
 
 	<select id="selectPostMainByParam" parameterType="java.util.Map"
 		resultMap="postMap">
@@ -23,7 +30,7 @@
 			and pm.post_id=#{postId}
 		</if>
 		<if test="postTitle !=null and postTitle!=''">
-			and pm.post_title=#{postTitle}
+			and pm.post_title  like CONCAT('%',#{postTitle},'%')
 		</if>
 		<if test="postContent !=null and postContent!=''">
 			and pm.post_content=#{postContent}
@@ -34,12 +41,14 @@
 		<if test="userId !=null and userId!=''">
 			and pm.user_id=#{userId}
 		</if>
-		<if test="postCreateTime!=null and userId!=''">
-			and post_create_time =#{postCreateTime}
+		<if test="postCreateTime!=null and postCreateTime!=''">
+			and pm.post_create_time =#{postCreateTime}
 		</if>
 		order by pm.post_create_time desc
 		limit 0,6
-
+	</select>
+	<select id="selectTopic"  resultMap="topicMap">
+SELECT * FROM topic WHERE is_del ='1'
 	</select>
 
 </mapper>

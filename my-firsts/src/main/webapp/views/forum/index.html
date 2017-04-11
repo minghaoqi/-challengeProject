@@ -62,7 +62,7 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li class="current-menu-item"><a href="index-2.html">暂定模块</a></li>
+							<li class="current-menu-item"><a href="/forum/toPost.do">点我发帖</a></li>
 							<li><a href="home-categories-description.html">暂定模块</a></li>
 							<li><a href="home-categories-articles.html">暂定模块</a></li>
 							<li><a href="articles-list.html">暂定模块</a></li>
@@ -94,12 +94,11 @@
 	<!-- Start of Search Wrapper -->
 	<div class="search-area-wrapper">
 		<div class="search-area container">
-			<h3 class="search-header">感兴趣的话题</h3>
-			<p class="search-tag-line">如果你对某个话题感兴趣，请输入，我们来为你找志同道合的伙伴</p>
-
+			<h3 class="search-header">搜索帖子</h3>
+    <!-- <p class="search-tag-line">请输入你想要搜索的帖子</p> -->			
 			<form id="search-form" class="search-form clearfix" method="get"
-				action="#" autocomplete="off">
-				<input class="search-term required" type="text" id="s" name="s"
+				action="/forum/toForum.do" autocomplete="off">
+				<input class="search-term required" type="text" id="postTitle" name="postTitle"
 					placeholder="Type your search terms here"
 					title="* Please enter a search term!" /> <input class="search-btn"
 					type="submit" value="Search" />
@@ -387,6 +386,11 @@
 		src='<@web.contextPath />/static/luntan-js/jquery.validate.min.js'></script>
 	<script type='text/javascript'
 		src='<@web.contextPath />/static/luntan-js/custom.js'></script>
-
+		<script>
+		$("#search-form").submit(function(){
+			$("#search-form").submit;
+		})
+		
+		</script>
 </body>
 </html>

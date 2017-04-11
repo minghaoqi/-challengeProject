@@ -1,17 +1,15 @@
-package cn.start.po;
+package cn.start.vo;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author qiminghao 话题实体类
- */
-public class Topic implements Serializable {
+public class TopicVo implements Serializable {
 
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 5565829790904260902L;
+	private static final long serialVersionUID = 3105803964230829847L;
 
 	/**
 	 * 话题ID
@@ -22,6 +20,7 @@ public class Topic implements Serializable {
 	 * 话题名称
 	 */
 	private String topicName;
+
 
 	/**
 	 * 话题创建时间
@@ -46,13 +45,7 @@ public class Topic implements Serializable {
 		this.topicId = topicId;
 	}
 
-	public String getTopicName() {
-		return topicName;
-	}
 
-	public void setTopicName(String topicName) {
-		this.topicName = topicName;
-	}
 
 	public Date getCreateTime() {
 		return createTime;
@@ -69,6 +62,14 @@ public class Topic implements Serializable {
 	public void setIsDel(int isDel) {
 		this.isDel = isDel;
 	}
+	public String getTopicName() {
+		return topicName;
+	}
+
+	public void setTopicName(String topicName) {
+		this.topicName = topicName;
+	}
+
 
 	public int getUserId() {
 		return userId;
@@ -77,5 +78,4 @@ public class Topic implements Serializable {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
 }

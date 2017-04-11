@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,14 +24,22 @@ public class ForumController {
 	@Autowired
 	PostMainService postmainservice;
 	@RequestMapping(value = "toForum")
-	public ModelAndView toForum(String name) {
+	public ModelAndView toForum(String postTitle) {
       Map<String, Object> map =new HashMap<String,Object>();
-      
-		
-		List<PostMainVo> postMains =postmainservice.selectPostMainByParam(map);
+      if(StringUtils.isNotEmpty(postTitle)){    	 
+    	  map.put("postTitle", postTitle);	  
+      }
+        List<PostMainVo> postMains =postmainservice.selectPostMainByParam(map);
 		ModelAndView md =new ModelAndView("/forum/index");
 		md.addObject("list", postMains);
 		return  md;
+	}
+	@RequestMapping(value="toPost")
+	public ModelAndView toPost(HttpServletRequest  request){
+		ModelAndView mv =new ModelAndView("forum/post");
+	    mv.addObject("topList", postmainservice.selectTopic());
+		return mv;
+		
 	}
 
 }
