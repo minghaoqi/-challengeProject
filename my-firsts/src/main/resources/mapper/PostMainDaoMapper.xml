@@ -50,5 +50,8 @@
 	<select id="selectTopic"  resultMap="topicMap">
 SELECT * FROM topic WHERE is_del ='1'
 	</select>
-
+	<insert id="addPost" parameterMap="cn.start.po.PostMain" >
+INSERT  INTO `post_main`(`post_title`,`post_content`,`post__topic_id`,`user_id`,`is_del`,`post_comment_count`,`post_create_time`) VALUES 
+(#{postTitle},#{postContent},#{postTopicId},#{userId},#{isDel},#{postCommentCount},#{postCreateTime});	
+	</insert>
 </mapper>

@@ -11,14 +11,17 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.druid.support.json.JSONUtils;
+
+import cn.start.po.PostMain;
 import cn.start.service.PostMainService;
 import cn.start.vo.PostMainVo;
 
 @Controller
 @RequestMapping("/forum")
-
 public class ForumController {
 	
 	@Autowired
@@ -40,6 +43,13 @@ public class ForumController {
 	    mv.addObject("topList", postmainservice.selectTopic());
 		return mv;
 		
+	}
+	@RequestMapping(value="doPost")
+	@ResponseBody
+public String doPost(HttpServletRequest request,PostMain postMain){
+       
+		
+		return JSONUtils.toJSONString("");
 	}
 
 }

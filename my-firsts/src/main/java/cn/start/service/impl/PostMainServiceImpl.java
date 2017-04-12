@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.start.dao.PostMainDao;
+import cn.start.po.PostMain;
 import cn.start.po.Topic;
 import cn.start.service.PostMainService;
 import cn.start.vo.PostMainVo;
@@ -27,6 +28,11 @@ PostMainDao postmainDao;
 		
 		// TODO Auto-generated method stub
 		return postmainDao.selectTopic();
+	}
+	@Override
+	public Integer addPost(PostMain postMain) {
+		// TODO Auto-generated method stub
+		return postmainDao.addPost(postMain);
 	}
 
 	
