@@ -1,6 +1,7 @@
 package cn.start.web;
 
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.runner.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,7 @@ import com.alibaba.druid.support.json.JSONUtils;
 
 import cn.start.po.PostMain;
 import cn.start.service.PostMainService;
+import cn.start.utils.RequestResult;
 import cn.start.vo.PostMainVo;
 
 @Controller
@@ -47,9 +50,15 @@ public class ForumController {
 	@RequestMapping(value="doPost")
 	@ResponseBody
 public String doPost(HttpServletRequest request,PostMain postMain){
-       
+		postMain.setUserId(1);
+		postMain.setPostCreateTime(new Date());
+       int i=postmainservice.addPost(postMain);
 		
-		return JSONUtils.toJSONString("");
+       if(i>0){
+    	   return "Success";
+       }
+       
+		return "fail";
 	}
 
 }
