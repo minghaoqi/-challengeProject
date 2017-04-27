@@ -9,7 +9,7 @@
         <version>1.5.3.RELEASE</version>
     </parent>
     <groupId>forum</groupId>
-    <artifactId>forum-item</artifactId>
+    <artifactId>forum-user</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>forum-user-app</module>
