@@ -4,7 +4,7 @@ mainWarp
 .config(function($routeProvider){
     $routeProvider
     .when('/signIn',{
-        templateUrl: '../sign/sign-in.html',
+        templateUrl: '../sign/sign-in.html?itemTitle=1',
         controller:'signController'
     })
 });
