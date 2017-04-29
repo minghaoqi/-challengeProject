@@ -11,7 +11,7 @@ mainWarp
             controller: 'signController'
         })
         .when("/group", {
-            templateUrl: '../sign/sign-in.html?itemTitle=1',
-            controller: 'signController'
+            templateUrl: '../group/group.html',
+            controller: 'groupController'
         })
 });

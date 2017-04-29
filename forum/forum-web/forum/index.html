@@ -22,7 +22,7 @@
                 <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="" class="active"><i class="glyphicon glyphicon-list"></i> 发现</a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-book"></i> 板块</a></li>
+                        <li><a href="#!/group"><i class="glyphicon glyphicon-book"></i> 板块</a></li>
                     </ul>
                 </nav>
             </div>
@@ -34,8 +34,10 @@
             </div>
         </div>
     </div>
-    <div class="container-view">
-        <div ng-view></div>
+    <div class="container-wrap">
+        <div class="container">
+            <div ng-view></div>
+        </div>
     </div>
 </div>
 </body>
