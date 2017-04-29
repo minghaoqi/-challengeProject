@@ -10,15 +10,15 @@
 </head>
 
 <div class="row">
-    <div class="aw-content-wrap clearfix">
+    <div class="content-wrap clearfix">
         <div class="col-sm-12 col-md-9 main-content">
-            <div class="mod topic-list">
+            <div class="mod topic-list" ng-app="groupApp" ng-controller="groupAppLoad">
                 <div class="mod-body clearfix">
-                    <div class="item">
+                    <div class="item" ng-repeat="topic in topics">
                         <i class="topic-i glyphicon glyphicon-file"></i>
                         <p class="clearfix">
                             <span class="topic-tag">
-                              <a class="text" href="http://wenda.golaravel.com/topic/laravel" data-id="57">laravel</a>
+                              <a class="text" href="" id="{{topic.itemTitleId}}">{{topic.itemTitle}}</a>
                             </span>
                         </p>
                         <p class="text-color-999">
@@ -31,8 +31,5 @@
                 </div>
             </div>
         </div>
-        <!-- 侧边栏 -->
-
-        <!-- end 侧边栏 -->
     </div>
 </div>
