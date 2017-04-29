@@ -1,83 +1,91 @@
-body{
- padding:0px;
- margin:0px;
- font-size:14px;
- margin:0;
- height:100%;
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    margin: 0;
+    height: 100%;
 }
 
-li{
- padding:0px;
- margin:0px;
- list-style-type:none;
+li {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
 }
 
-ul{
- padding:0px;
- margin:0px;
+ul {
+    padding: 0px;
+    margin: 0px;
 }
 
-form{
-margin:0px;
+form {
+    margin: 0px;
 }
 
-.menu-wrap{
- background-color: #f4726d;
- position: relative;
- z-index: 100;
- width: 100%;
- min-height: 50px;
+.menu-wrap {
+    background-color: #f4726d;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    min-height: 50px;
 }
 
 .container {
-    width: 800px!important;
+    width: 800px !important;
 }
 
-.search-box{
- position: relative;
- float:left;
- margin-top:10px;
+.container-view {
+    width: 800px !important;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
-.search-box input{
- width: 260px;
- height: 32px;
- border: none;
+.search-box {
+    position: relative;
+    float: left;
+    margin-top: 10px;
 }
 
-.search-form span{
- position: absolute;
- right: 5px;
- top: 5px;
- font-size: 18px;
- color: #999;
+.search-box input {
+    width: 260px;
+    height: 32px;
+    border: none;
 }
 
-.top-nav{
- border:none;
- margin:0px;
- float:left;
+.search-form span {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+    color: #999;
 }
 
-.top-nav>nav>ul>li>a {
+.top-nav {
+    border: none;
+    margin: 0px;
+    float: left;
+}
+
+.top-nav > nav > ul > li > a {
     padding: 16px;
     color: #fff;
 }
 
-.top-nav .navbar-nav>.active>a, .top-nav .navbar-nav>li>a.active {
- background-color: #f8a09c;
+.top-nav .navbar-nav > .active > a, .top-nav .navbar-nav > li > a.active {
+    background-color: #f8a09c;
 }
 
-.nav > li > a:hover, .nav > li > a:focus{
- background-color: #f8a09c;
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #f8a09c;
 }
 
-a.active{
- font-weight: 700;
+a.active {
+    font-weight: 700;
 }
 
-.user-nav{
- margin: 10px 0 0 10px;
- position: relative;
- float: right;
+.user-nav {
+    margin: 10px 0 0 10px;
+    position: relative;
+    float: right;
 }
