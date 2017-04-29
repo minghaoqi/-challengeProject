@@ -22,21 +22,21 @@
                 <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="" class="active"><i class="glyphicon glyphicon-list"></i> 发现</a></li>
-                        <li><a href="#!/group"><i class="glyphicon glyphicon-book"></i> 板块</a></li>
+                        <li><a ui-sref="group"><i class="glyphicon glyphicon-book"></i> 板块</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="user-nav">
                 <span>
-		    		<a class="btn btn-normal btn-success" href="#!/signUp">注册</a>
-		    		<a class="btn btn-normal btn-info" href="#!/signIn">登录</a>
+		    		<a class="btn btn-normal btn-success" ui-sref="signUp">注册</a>
+		    		<a class="btn btn-normal btn-info" ui-sref="signIn">登录</a>
                 </span>
             </div>
         </div>
     </div>
     <div class="container-wrap">
         <div class="container">
-            <div ng-view></div>
+            <div ui-view></div>
         </div>
     </div>
 </div>
