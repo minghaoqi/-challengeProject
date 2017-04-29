@@ -6,6 +6,13 @@ mainWarp.config(function ($stateProvider) {
     });
     $stateProvider.state('group', {
         url: '/group',
-        templateUrl: '../group/group.html'
-    });
+        templateUrl: '../group/group.html',
+        component: 'group',
+        resolve: {
+            group: function (groupService) {
+                return groupService.getGroupTopics();
+            }
+
+        }
+    })
 });
