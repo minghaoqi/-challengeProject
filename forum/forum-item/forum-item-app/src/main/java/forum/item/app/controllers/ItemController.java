@@ -1,6 +1,7 @@
 package forum.item.app.controllers;
 
-import forum.item.app.models.ItemTitle;
+import forum.item.app.models.ItemArticle;
+import forum.item.app.models.ItemTopic;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,35 +13,45 @@ import java.util.List;
 public class ItemController {
 
     @RequestMapping(value = "/item/itemTitles", method = RequestMethod.GET)
-    public List<ItemTitle> getItemTitles() {
-        List<ItemTitle> itemTitles = new ArrayList<ItemTitle>();
+    public List<ItemTopic> getItemTitles() {
+        List<ItemTopic> itemTitles = new ArrayList<ItemTopic>();
 
-        ItemTitle itemTitle1 = new ItemTitle();
-        itemTitle1.setItemTitle("title1");
-        itemTitle1.setItemTitleId(1L);
+        ItemTopic itemTitle1 = new ItemTopic();
+        itemTitle1.setItemTopic("title1");
+        itemTitle1.setItemTopicId(1L);
         itemTitles.add(itemTitle1);
 
-        ItemTitle itemTitle2 = new ItemTitle();
-        itemTitle2.setItemTitle("title2");
-        itemTitle2.setItemTitleId(1L);
+        ItemTopic itemTitle2 = new ItemTopic();
+        itemTitle2.setItemTopic("title2");
+        itemTitle2.setItemTopicId(2L);
         itemTitles.add(itemTitle2);
 
-        ItemTitle itemTitle3 = new ItemTitle();
-        itemTitle3.setItemTitle("title3");
-        itemTitle3.setItemTitleId(1L);
+        ItemTopic itemTitle3 = new ItemTopic();
+        itemTitle3.setItemTopic("title3");
+        itemTitle3.setItemTopicId(3L);
         itemTitles.add(itemTitle3);
 
-        ItemTitle itemTitle4 = new ItemTitle();
-        itemTitle4.setItemTitle("title4");
-        itemTitle4.setItemTitleId(1L);
+        ItemTopic itemTitle4 = new ItemTopic();
+        itemTitle4.setItemTopic("title4");
+        itemTitle4.setItemTopicId(4L);
         itemTitles.add(itemTitle4);
 
-        ItemTitle itemTitle5 = new ItemTitle();
-        itemTitle5.setItemTitle("title5");
-        itemTitle5.setItemTitleId(1L);
+        ItemTopic itemTitle5 = new ItemTopic();
+        itemTitle5.setItemTopic("title5");
+        itemTitle5.setItemTopicId(5L);
         itemTitles.add(itemTitle5);
 
         return itemTitles;
+    }
+
+    public List<ItemArticle> getItemArticles() {
+
+
+
+
+        
+
+        return null;
     }
 
 
