@@ -2,17 +2,17 @@
     <meta charset="utf-8">
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
-    <link href="group.css" rel="stylesheet">
+    <link href="../group/group.css" rel="stylesheet">
     <link href="../sign/sign-in.css" rel="stylesheet">
     <script src="../js/angular.min.js"></script>
     <script src="../group/group.js"></script>
 
 </head>
 
-<div class="row">
+<div class="row" ng-app="groupApp">
     <div class="content-wrap clearfix">
         <div class="col-sm-12 col-md-9 main-content">
-            <div class="mod topic-list" ng-app="groupApp">
+            <div class="mod topic-list">
                 <div class="mod-body clearfix">
                     <div class="item" ng-repeat="topic in topics">
                         <i class="topic-i glyphicon glyphicon-file"></i>
