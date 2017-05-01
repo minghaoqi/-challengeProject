@@ -1,4 +1,5 @@
-<div class="row" ng-app="groupApp">
+<link href="../group/group.css" rel="stylesheet">
+<div class="row">
     <div class="content-wrap clearfix">
         <div class="col-sm-12 col-md-9 main-content">
             <div class="mod topic-list">
@@ -7,7 +8,7 @@
                         <i class="topic-i glyphicon glyphicon-file"></i>
                         <p class="clearfix">
                             <span class="topic-tag">
-                              <a class="text" href="" id="{{topic.itemTopicId}}">{{topic.itemTopics}}</a>
+                              <a class="text" ng-client="toArticleList({{topic.itemTopicId}})" id="{{topic.itemTopicId}}">{{topic.itemTopic}}</a>
                             </span>
                         </p>
                         <p class="text-color-999">
