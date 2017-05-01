@@ -51,38 +51,38 @@ public class ItemController {
         List<ItemArticle> itemArticles = new ArrayList<ItemArticle>();
         ItemArticle itemArticle1 = new ItemArticle();
         itemArticle1.setArticleId(1L);
-        itemArticle1.setItemTopicId(1L);
+        itemArticle1.setItemTopicId(topicId);
         itemArticle1.setArticleTopic("articleTopic1");
         itemArticles.add(itemArticle1);
 
 
         ItemArticle itemArticle2 = new ItemArticle();
         itemArticle2.setArticleId(2L);
-        itemArticle2.setItemTopicId(1L);
+        itemArticle2.setItemTopicId(topicId);
         itemArticle2.setArticleTopic("articleTopic2");
         itemArticles.add(itemArticle2);
 
         ItemArticle itemArticle3 = new ItemArticle();
         itemArticle3.setArticleId(3L);
-        itemArticle3.setItemTopicId(1L);
+        itemArticle3.setItemTopicId(topicId);
         itemArticle3.setArticleTopic("articleTopic3");
         itemArticles.add(itemArticle3);
 
         ItemArticle itemArticle4 = new ItemArticle();
         itemArticle4.setArticleId(4L);
-        itemArticle4.setItemTopicId(1L);
+        itemArticle4.setItemTopicId(topicId);
         itemArticle4.setArticleTopic("articleTopic4");
         itemArticles.add(itemArticle4);
 
         ItemArticle itemArticle5 = new ItemArticle();
         itemArticle5.setArticleId(5L);
-        itemArticle5.setItemTopicId(1L);
+        itemArticle5.setItemTopicId(topicId);
         itemArticle5.setArticleTopic("articleTopic5");
         itemArticles.add(itemArticle5);
 
         ItemArticle itemArticle6 = new ItemArticle();
         itemArticle6.setArticleId(6L);
-        itemArticle6.setItemTopicId(1L);
+        itemArticle6.setItemTopicId(topicId);
         itemArticle6.setArticleTopic("articleTopic6");
         itemArticles.add(itemArticle6);
 
